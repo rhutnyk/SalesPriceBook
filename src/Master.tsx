@@ -1,11 +1,12 @@
 import * as React from 'react';
 
-import RaisedButton from 'material-ui/RaisedButton';
 import { Tabs, Tab } from 'material-ui/Tabs';
 import FontIcon from 'material-ui/FontIcon';
 import ActionFlightTakeoff from 'material-ui/svg-icons/action/flight-takeoff';
 import { BottomNavigation, BottomNavigationItem } from 'material-ui/BottomNavigation';
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
+
+import Home from './pages/home/home';
 
 const recentsIcon = <FontIcon className="material-icons">restore</FontIcon>;
 const favoritesIcon = <FontIcon className="material-icons">favorite</FontIcon>;
@@ -23,21 +24,11 @@ class Master extends React.Component {
         return (
             <div className="App">
                 <Tabs>
-                    <Tab icon={<FontIcon className="muidocs-icon-action-home" />} />
+                    <Tab icon={<FontIcon className="material-icons">store</FontIcon>} />
                     <Tab icon={<ActionFlightTakeoff />} />
                     <Tab icon={<FontIcon className="material-icons">favorite</FontIcon>} />
                 </Tabs>
-                <p className="App-intro">
-                    <FontIcon className="material-icons">help</FontIcon>
-                    <FontIcon className="material-icons">favorite</FontIcon>
-                    <FontIcon className="muidocs-icon-action-home" />
-                    <br/>
-                    <i className="material-icons">face</i>
-                    To get started, edit <code>src/App.tsx</code> and save to reload.
-                </p>
-                <div>
-                    <RaisedButton label="Default" />
-                </div>
+                <Home/>                
                 <BottomNavigation selectedIndex={this.state.selectedIndex}>
                     <BottomNavigationItem
                         label="Recents"
